@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import ContactForm from '../components/contact/ContactForm';
 import ContactInfo from '../components/contact/ContactInfo';
-import SectionBadge from '../components/ui/SectionBadge';
 
 const Contact = () => {
   return (
@@ -16,14 +15,7 @@ const Contact = () => {
         <div className="orb orb-cyan absolute bottom-0 right-1/3 w-80 h-64 opacity-15 pointer-events-none" />
 
         <div className="relative z-10 text-center px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-5"
-          >
-            <SectionBadge>We'd Love To Hear From You</SectionBadge>
-          </motion.div>
+          {/* Badge removed */}
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}

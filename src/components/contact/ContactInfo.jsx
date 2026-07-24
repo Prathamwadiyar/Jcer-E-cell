@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=JGI+-+Jain+College+Of+Engineering+And+Research,+682%2F2,+683%2F2A,+Udyambag,+Angol,+Belagavi,+Karnataka+590008';
 
 const contactItems = [
   {
@@ -19,16 +21,9 @@ const contactItems = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    value: 'Student Activity Center, Block D',
-    sub: 'College Campus, City – 400001',
-    href: '#',
-  },
-  {
-    icon: Clock,
-    title: 'Office Hours',
-    value: 'Mon–Fri: 10AM – 6PM',
-    sub: 'Sat: 10AM – 2PM',
-    href: null,
+    value: 'Jain College Of Engineering & Research',
+    sub: 'JGI - 682/2, 683/2A, Udyambag, Angol, Belagavi, Karnataka 590008',
+    href: MAPS_URL,
   },
 ];
 
@@ -62,6 +57,7 @@ const ContactInfo = () => {
               <Wrapper
                 href={href || undefined}
                 target={href?.startsWith('http') ? '_blank' : undefined}
+                rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className={`glass rounded-xl p-4 flex items-start gap-4 transition-all duration-300
                   ${href ? 'hover:border-ecell-blue/30 hover:shadow-glow-sm cursor-pointer' : ''}
                   border border-white/[0.08]`}
@@ -80,8 +76,14 @@ const ContactInfo = () => {
         })}
       </div>
 
-      {/* Map placeholder */}
-      <div className="rounded-2xl overflow-hidden border border-white/[0.08] h-52 relative">
+      {/* Map — clicking opens Google Maps */}
+      <a
+        href={MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block rounded-2xl overflow-hidden border border-white/[0.08] h-52 relative group"
+        aria-label="Open location in Google Maps"
+      >
         <div className="w-full h-full bg-gradient-to-br from-ecell-bg2 to-ecell-bg flex items-center justify-center relative">
           {/* Fake map grid */}
           <div className="absolute inset-0 opacity-30"
@@ -90,15 +92,21 @@ const ContactInfo = () => {
               backgroundSize: '30px 30px'
             }}
           />
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-ecell-blue/0 group-hover:bg-ecell-blue/5 transition-all duration-300 flex items-end justify-center pb-3">
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-ecell-glow text-xs font-inter font-medium">
+              Open in Google Maps ↗
+            </span>
+          </div>
           <div className="relative text-center">
-            <div className="w-10 h-10 rounded-full bg-ecell-blue shadow-glow-md flex items-center justify-center mx-auto mb-2">
+            <div className="w-10 h-10 rounded-full bg-ecell-blue shadow-glow-md flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
               <MapPin className="w-5 h-5 text-white" />
             </div>
-            <p className="text-ecell-gray text-xs font-inter">College Campus</p>
-            <p className="text-ecell-gray/50 text-xs mt-1">City – 400001</p>
+            <p className="text-white text-xs font-inter font-semibold">Jain College Of Engineering & Research</p>
+            <p className="text-ecell-gray/60 text-[10px] mt-1 max-w-[200px] mx-auto leading-snug">Udyambag, Angol, Belagavi, Karnataka 590008</p>
           </div>
         </div>
-      </div>
+      </a>
     </motion.div>
   );
 };

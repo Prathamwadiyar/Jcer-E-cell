@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Heart } from 'lucide-react';
-import { FaLinkedinIn, FaInstagram, FaXTwitter, FaThreads, FaYoutube, FaFacebookF } from 'react-icons/fa6';
+import { FaLinkedinIn, FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import logoImg from '../../assets/logo.jpg';
 
 const quickLinks = [
@@ -20,12 +20,10 @@ const resources = [
 ];
 
 const socials = [
-  { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
-  { icon: FaInstagram,  href: '#', label: 'Instagram' },
-  { icon: FaXTwitter,   href: '#', label: 'X' },
-  { icon: FaThreads,    href: '#', label: 'Threads' },
-  { icon: FaYoutube,    href: '#', label: 'YouTube' },
-  { icon: FaFacebookF,  href: '#', label: 'Facebook' },
+  { icon: FaLinkedinIn, label: 'LinkedIn',  href: 'https://www.linkedin.com/company/jcer-e-cell/posts/?feedView=all' },
+  { icon: FaInstagram,  label: 'Instagram', href: 'https://www.instagram.com/jcer_ecell' },
+  { icon: FaXTwitter,   label: 'X',         href: '#' },
+  { icon: FaWhatsapp,   label: 'WhatsApp',  href: 'https://wa.me/919483937558' },
 ];
 
 const Footer = () => {
@@ -145,15 +143,6 @@ const Footer = () => {
         {/* Divider */}
         <div className="glow-divider mb-6" />
 
-        {/* Bottom */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/30 text-xs font-inter">
-            © {new Date().getFullYear()} E-Cell JCER. All rights reserved.
-          </p>
-          <p className="text-white/30 text-xs font-inter flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by JCER Web Team
-          </p>
-        </div>
       </div>
     </footer>
   );

@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaInstagram, FaXTwitter, FaThreads, FaYoutube, FaFacebookF } from 'react-icons/fa6';
+import { FaLinkedinIn, FaInstagram, FaXTwitter, FaWhatsapp } from 'react-icons/fa6';
 
 const socials = [
-  { icon: FaLinkedinIn,  label: 'LinkedIn',  href: '#', hoverColor: '#0A66C2' },
-  { icon: FaInstagram,   label: 'Instagram', href: '#', hoverColor: '#E1306C' },
+  { icon: FaLinkedinIn,  label: 'LinkedIn',  href: 'https://www.linkedin.com/company/jcer-e-cell/posts/?feedView=all', hoverColor: '#0A66C2' },
+  { icon: FaInstagram,   label: 'Instagram', href: 'https://www.instagram.com/jcer_ecell', hoverColor: '#E1306C' },
   { icon: FaXTwitter,    label: 'X',         href: '#', hoverColor: '#ffffff' },
-  { icon: FaThreads,     label: 'Threads',   href: '#', hoverColor: '#60A5FA' },
-  { icon: FaYoutube,     label: 'YouTube',   href: '#', hoverColor: '#FF0000' },
-  { icon: FaFacebookF,   label: 'Facebook',  href: '#', hoverColor: '#1877F2' },
+  { icon: FaWhatsapp,    label: 'WhatsApp',  href: 'https://wa.me/919483937558', hoverColor: '#25D366' },
 ];
 
 const SocialBar = () => {

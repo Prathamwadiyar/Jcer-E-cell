@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
@@ -29,6 +29,13 @@ const AnimatedRoutes = () => {
 const App = () => {
   const [splashDone, setSplashDone] = useState(false);
   const handleSplashDone = useCallback(() => setSplashDone(true), []);
+
+  // Force redirect to home page on full page load/refresh
+  useEffect(() => {
+    if (window.location.pathname !== '/') {
+      window.history.replaceState(null, '', '/');
+    }
+  }, []);
 
   return (
     <BrowserRouter>

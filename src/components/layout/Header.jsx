@@ -45,20 +45,18 @@ const Header = () => {
         <motion.header
           initial={{ y: -80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.55, ease: 'easeOut' }}
-          className={`transition-all duration-500 ${
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className={`transition-all duration-700 ${
             scrolled
-              ? /* Scrolled: compact pill-style bar */
-                'w-auto mx-auto px-6 py-2.5 rounded-2xl bg-black/80 backdrop-blur-2xl border border-white/[0.08] shadow-[0_4px_32px_rgba(0,0,0,0.6)]'
-              : /* Top: full-width transparent */
-                'w-full px-6 lg:px-10 py-2 bg-transparent border-b border-transparent'
+              ? 'w-auto mx-auto px-6 py-2.5 rounded-2xl bg-black/80 backdrop-blur-2xl border border-white/[0.08] shadow-[0_4px_32px_rgba(0,0,0,0.6)]'
+              : 'w-full px-6 lg:px-10 py-2 bg-transparent border-b border-transparent'
           }`}
           style={{ maxWidth: scrolled ? '1020px' : '100%' }}
         >
-          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-13 px-5 gap-10' : 'h-16 px-0 gap-4'}`}>
+          <div className={`flex items-center justify-between transition-all duration-700 w-full ${scrolled ? 'h-13 px-5 gap-6 lg:gap-8' : 'h-16 px-0 gap-4'}`}>
 
             {/* Left: Logo */}
-            <Link to="/" className="flex-shrink-0 z-10 mr-4 md:mr-8">
+            <Link to="/" className="flex-shrink-0 z-10 mr-2 md:mr-4">
               <img
                 src={logoImg}
                 alt="E-Cell Logo"
@@ -67,7 +65,7 @@ const Header = () => {
             </Link>
 
             {/* Center: Desktop Nav */}
-            <nav className={`hidden md:flex flex-1 items-center justify-center transition-all duration-500 ${scrolled ? 'gap-5 lg:gap-8' : 'gap-8'}`}>
+            <nav className={`hidden md:flex flex-1 items-center justify-center transition-all duration-700 ${scrolled ? 'gap-4 lg:gap-7' : 'gap-8'}`}>
               {navLinks.map(({ to, label }) => (
                 <NavLink
                   key={to}
@@ -81,59 +79,56 @@ const Header = () => {
                 </NavLink>
               ))}
 
-              {/* Vertical separator for scrolled state */}
+              {/* Vertical separator for scrolled state (if needed, otherwise remove) */}
               {scrolled && (
-                <span className="w-px h-4 bg-white/10 block flex-shrink-0" />
+                <span className="w-px h-4 bg-white/10 block flex-shrink-0 ml-2" />
               )}
-
-              {/* Upcoming Events & Blogs dropdown button */}
-              <div ref={eventsRef} className="relative flex-shrink-0">
-                <motion.button
-                  onClick={() => setEventsOpen(!eventsOpen)}
-                  whileHover={{ scale: 1.04, boxShadow: '0 0 16px rgba(59,130,246,0.45)' }}
-                  whileTap={{ scale: 0.96 }}
-                  className={`inline-flex items-center gap-1.5 font-inter font-medium rounded-full border border-white/25 text-white whitespace-nowrap
-                    hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-250
-                    ${scrolled ? 'px-4 py-1.5 text-[12px]' : 'px-5 py-2 text-[12px]'}`}
-                >
-                  Upcoming Events & Blogs
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${eventsOpen ? 'rotate-180' : ''}`} />
-                </motion.button>
-
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {eventsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -6, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -6, scale: 0.96 }}
-                      transition={{ duration: 0.18 }}
-                      className="absolute top-full right-0 mt-2 w-44 rounded-xl bg-black/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.7)] overflow-hidden z-50"
-                    >
-                      <a
-                        href="/events"
-                        onClick={() => setEventsOpen(false)}
-                        className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-150 border-b border-white/[0.06]"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
-                        Events
-                      </a>
-                      <a
-                        href="/blog"
-                        onClick={() => setEventsOpen(false)}
-                        className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-150"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
-                        Blog
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
             </nav>
 
-            {/* Right: Balance spacer + JOIN US only shows outside nav on non-scrolled */}
-            <div className="hidden md:block flex-shrink-0" style={{ minWidth: '90px' }}></div>
+            {/* Right: Upcoming Events & Blogs dropdown button */}
+            <div ref={eventsRef} className="relative hidden md:block flex-shrink-0 z-20">
+              <motion.button
+                onClick={() => setEventsOpen(!eventsOpen)}
+                whileHover={{ scale: 1.04, boxShadow: '0 0 16px rgba(59,130,246,0.45)' }}
+                whileTap={{ scale: 0.96 }}
+                className={`inline-flex items-center gap-1.5 font-inter font-medium rounded-full border border-white/25 text-white whitespace-nowrap
+                  hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-300
+                  ${scrolled ? 'px-4 py-1.5 text-[12px]' : 'px-5 py-2 text-[13px]'}`}
+              >
+                Upcoming Events & Blogs
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${eventsOpen ? 'rotate-180' : ''}`} />
+              </motion.button>
+
+              {/* Dropdown */}
+              <AnimatePresence>
+                {eventsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -6, scale: 0.96 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full right-0 mt-3 w-44 rounded-xl bg-black/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.7)] overflow-hidden z-50"
+                  >
+                    <Link
+                      to="/events"
+                      onClick={() => setEventsOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-200 border-b border-white/[0.06]"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
+                      Events
+                    </Link>
+                    <Link
+                      to="/blog"
+                      onClick={() => setEventsOpen(false)}
+                      className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
+                      Blog
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             
             {/* Hamburger (mobile) */}
             <button
@@ -192,20 +187,20 @@ const Header = () => {
                   </NavLink>
                 </motion.div>
               ))}
-              <a
-                href="/events"
+              <Link
+                to="/events"
                 onClick={() => setMenuOpen(false)}
                 className="block py-2.5 px-3 rounded-xl text-sm font-inter transition-all duration-200 text-ecell-gray hover:text-white hover:bg-white/[0.04]"
               >
                 Events
-              </a>
-              <a
-                href="/blog"
+              </Link>
+              <Link
+                to="/blog"
                 onClick={() => setMenuOpen(false)}
                 className="block py-2.5 px-3 rounded-xl text-sm font-inter transition-all duration-200 text-ecell-gray hover:text-white hover:bg-white/[0.04]"
               >
                 Blog
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

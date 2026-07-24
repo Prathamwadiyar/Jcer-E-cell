@@ -1,15 +1,7 @@
-export const teamCategories = [
-  'Overall Coordinators',
-  'Managers',
-  'Web & Tech',
-  'Design & Media',
-  'Content & Research',
-  'Events & PR',
-  'Corporate & Marketing'
-];
+import swayamImg from '../assets/swayam.png';
 
 export const teamData = [
-  // Overall Coordinators
+  // 1. Omkar V Shirvalkar
   {
     id: 1,
     name: 'Omkar V Shirvalkar',
@@ -19,6 +11,7 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
+  // 2. Saniya Gorikhan
   {
     id: 2,
     name: 'Saniya Gorikhan',
@@ -28,8 +21,7 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
-
-  // Managers
+  // 3. Pranali Basarikatti
   {
     id: 3,
     name: 'Pranali Basarikatti',
@@ -39,6 +31,58 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
+  // 4. Swayam Khangaonkar
+  {
+    id: 7,
+    name: 'Swayam Khangaonkar',
+    role: 'LEAD WEB & TECH',
+    category: 'Web & Tech',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: swayamImg,
+  },
+  // 5. Pratham Wadeyar
+  {
+    id: 8,
+    name: 'Pratham Wadeyar',
+    role: 'LEAD WEB & TECH',
+    category: 'Web & Tech',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: null,
+  },
+  // 6. Sarthak Chillal
+  {
+    id: 15,
+    name: 'Sarthak Chillal',
+    role: 'LEAD - CONTENT & RESEARCH',
+    category: 'Content & Research',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: null,
+  },
+  // 7. Sheetal Ingale
+  {
+    id: 16,
+    name: 'Sheetal Ingale',
+    role: 'CO-LEAD (CONTENT & RESEARCH)',
+    category: 'Content & Research',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: null,
+  },
+  // 8. Rahul AK
+  {
+    id: 18,
+    name: 'Rahul AK',
+    role: 'LEAD - EVENTS & PR',
+    category: 'Events & PR',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: null,
+  },
+
+  // Remaining randomly/ordered
   {
     id: 4,
     name: 'Kesar Rajput',
@@ -66,26 +110,6 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
-
-  // Web & Tech
-  {
-    id: 7,
-    name: 'Swayam Khangaonkar',
-    role: 'LEAD WEB & TECH',
-    category: 'Web & Tech',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
-    avatar: null,
-  },
-  {
-    id: 8,
-    name: 'Pratham Wadeyar',
-    role: 'LEAD WEB & TECH',
-    category: 'Web & Tech',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
-    avatar: null,
-  },
   {
     id: 9,
     name: 'Pratik Hannikeri',
@@ -104,8 +128,6 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
-
-  // Design & Media
   {
     id: 11,
     name: 'Atharva Kolekar',
@@ -142,42 +164,11 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
-
-  // Content & Research
-  {
-    id: 15,
-    name: 'Sarthak Chillal',
-    role: 'LEAD - CONTENT & RESEARCH',
-    category: 'Content & Research',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
-    avatar: null,
-  },
-  {
-    id: 16,
-    name: 'Sheetal Ingale',
-    role: 'CO-LEAD (CONTENT & RESEARCH)',
-    category: 'Content & Research',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
-    avatar: null,
-  },
   {
     id: 17,
     name: 'Soham Petkar',
     role: 'CO-ORDINATOR (CONTENT & RESEARCH)',
     category: 'Content & Research',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
-    avatar: null,
-  },
-
-  // Events & PR
-  {
-    id: 18,
-    name: 'Rahul AK',
-    role: 'LEAD - EVENTS & PR',
-    category: 'Events & PR',
     linkedin: '#',
     email: 'mailto:contact@example.com',
     avatar: null,
@@ -209,8 +200,6 @@ export const teamData = [
     email: 'mailto:contact@example.com',
     avatar: null,
   },
-
-  // Corporate & Marketing
   {
     id: 22,
     name: 'Shreya Patil',

@@ -1,14 +1,9 @@
 import { motion } from 'framer-motion';
-import { teamData, teamCategories } from '../data/teamData';
+import { teamData } from '../data/teamData';
 import TeamCard from '../components/team/TeamCard';
 import SectionBadge from '../components/ui/SectionBadge';
 
 const Team = () => {
-  const categorizedTeam = teamCategories.map((cat) => ({
-    category: cat,
-    members: teamData.filter((m) => m.category === cat),
-  })).filter((g) => g.members.length > 0);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,7 +22,7 @@ const Team = () => {
             transition={{ duration: 0.5 }}
             className="mb-5"
           >
-            <SectionBadge>The People Behind E-Cell</SectionBadge>
+            <SectionBadge>The Minds Behind E-Cell</SectionBadge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
@@ -35,7 +30,7 @@ const Team = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sora font-bold text-5xl md:text-7xl text-white mb-4"
           >
-            Meet Our <span className="gradient-text">Team</span>
+            Our <span className="gradient-text">Team</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -48,40 +43,14 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Team Sections */}
+      {/* Team Grid */}
       <section className="py-16 bg-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 space-y-20">
-          {categorizedTeam.map(({ category, members }) => (
-            <div key={category}>
-              {/* Category Heading */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-                className="mb-8 flex items-center gap-4"
-              >
-                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-ecell-blue/25" />
-                <h2 className="font-sora font-semibold text-lg text-white whitespace-nowrap px-2">{category}</h2>
-                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-ecell-blue/25" />
-              </motion.div>
-
-              {/* Team Cards */}
-              <div
-                className={`grid gap-5 ${
-                  members.length === 1
-                    ? 'grid-cols-1 max-w-[200px] mx-auto'
-                    : members.length === 2
-                    ? 'grid-cols-2 max-w-sm mx-auto'
-                    : 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'
-                }`}
-              >
-                {members.map((member, i) => (
-                  <TeamCard key={member.id} member={member} index={i} />
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid gap-x-6 gap-y-12 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+            {teamData.map((member, i) => (
+              <TeamCard key={member.id} member={member} index={i} />
+            ))}
+          </div>
         </div>
       </section>
     </motion.div>

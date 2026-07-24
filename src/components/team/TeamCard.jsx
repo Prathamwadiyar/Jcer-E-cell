@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Globe, Share2 } from 'lucide-react';
 
-// Deterministic color for avatar based on name
+// Deterministic color for avatar based on name (fallback)
 const avatarColors = [
   'from-blue-600 to-indigo-700',
   'from-violet-600 to-purple-700',
@@ -27,12 +26,12 @@ const TeamCard = ({ member, index = 0 }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
       whileHover={{ y: -8 }}
-      className="team-card glass rounded-2xl p-6 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:shadow-glow-md group"
+      className="flex flex-col items-center text-center group cursor-pointer"
     >
-      {/* Avatar */}
-      <div className="relative">
+      {/* Avatar Container */}
+      <div className="relative mb-4">
         <div
-          className={`team-img-ring w-20 h-20 rounded-full border-2 border-ecell-blue/40 flex items-center justify-center bg-gradient-to-br ${gradient} transition-all duration-400`}
+          className={`w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center bg-gradient-to-br ${gradient} transition-transform duration-500 group-hover:scale-105 shadow-xl`}
         >
           {member.avatar ? (
             <img
@@ -41,42 +40,38 @@ const TeamCard = ({ member, index = 0 }) => {
               className="w-full h-full rounded-full object-cover"
             />
           ) : (
-            <span className="font-sora font-bold text-xl text-white">{initials}</span>
+            <span className="font-sora font-bold text-3xl md:text-4xl text-white">{initials}</span>
           )}
         </div>
-        {/* Online dot */}
-        <span className="absolute bottom-1 right-1 w-3 h-3 rounded-full bg-ecell-glow border-2 border-ecell-bg shadow-glow-sm" />
+
+        {/* Social Icons floating on bottom right */}
+        <div className="absolute -bottom-2 -right-2 flex gap-1 bg-black/60 backdrop-blur-md rounded-full p-1.5 border border-white/10 shadow-lg">
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name} LinkedIn`}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white bg-transparent hover:bg-[#0A66C2] transition-colors duration-200"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a
+            href={member.email}
+            aria-label={`Email ${member.name}`}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-white bg-transparent hover:bg-ecell-blue transition-colors duration-200"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
       </div>
 
       {/* Info */}
-      <div>
-        <h3 className="font-sora font-semibold text-white text-base">{member.name}</h3>
-        <p className="text-ecell-gray text-xs font-inter mt-1 px-3 py-1 rounded-full bg-ecell-blue/10 border border-ecell-blue/20 inline-block">
-          {member.role}
-        </p>
-      </div>
-
-      {/* Social links */}
-      <div className="flex gap-3">
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${member.name} LinkedIn`}
-          className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-ecell-gray hover:text-[#0A66C2] hover:border-[#0A66C2]/50 hover:bg-[#0A66C2]/10 transition-all duration-200"
-        >
-          <Globe className="w-3.5 h-3.5" />
-        </a>
-        <a
-          href={member.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${member.name} Instagram`}
-          className="w-8 h-8 flex items-center justify-center rounded-lg border border-white/10 text-ecell-gray hover:text-[#E1306C] hover:border-[#E1306C]/50 hover:bg-[#E1306C]/10 transition-all duration-200"
-        >
-          <Share2 className="w-3.5 h-3.5" />
-        </a>
-      </div>
+      <h3 className="font-sora font-bold text-white text-lg md:text-xl mt-2 tracking-wide transition-colors group-hover:text-ecell-blue">
+        {member.name}
+      </h3>
+      <p className="text-[#3b82f6] text-sm font-inter mt-1">
+        {member.role}
+      </p>
     </motion.div>
   );
 };

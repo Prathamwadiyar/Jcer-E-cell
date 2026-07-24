@@ -83,7 +83,7 @@ const ContactInfo = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.2282349185!2d74.49396887587!3d15.847661884889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf668f2e1e7e7f%3A0x4b9c6a1b2e3d4e5f!2sJGI%20-%20Jain%20College%20Of%20Engineering%20And%20Research!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
           width="100%"
           height="100%"
-          style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) saturate(0.8) brightness(0.85)' }}
+          style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

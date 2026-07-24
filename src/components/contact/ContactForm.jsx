@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../firebase';
 import GlowButton from '../ui/GlowButton';
 
 const fields = [
@@ -17,14 +19,23 @@ const ContactForm = () => {
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.id]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
+    
+    try {
+      await addDoc(collection(db, 'messages'), {
+        ...formData,
+        createdAt: serverTimestamp()
+      });
       setSubmitted(true);
-    }, 1500);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Failed to send message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {

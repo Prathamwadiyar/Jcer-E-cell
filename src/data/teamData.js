@@ -1,0 +1,220 @@
+export const teamCategories = [
+  'Faculty Coordinator',
+  'President',
+  'Vice President',
+  'Secretary',
+  'Technical Team',
+  'Design Team',
+  'Marketing Team',
+  'Management Team',
+  'Photography Team',
+];
+
+export const teamData = [
+  // Faculty Coordinator
+  {
+    id: 1,
+    name: 'Dr. Ananya Sharma',
+    role: 'Faculty Coordinator',
+    category: 'Faculty Coordinator',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // President
+  {
+    id: 2,
+    name: 'Arjun Mehta',
+    role: 'President',
+    category: 'President',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Vice President
+  {
+    id: 3,
+    name: 'Priya Nair',
+    role: 'Vice President',
+    category: 'Vice President',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 4,
+    name: 'Rohit Kapoor',
+    role: 'Vice President',
+    category: 'Vice President',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Secretary
+  {
+    id: 5,
+    name: 'Sneha Gupta',
+    role: 'Secretary',
+    category: 'Secretary',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 6,
+    name: 'Vikram Singh',
+    role: 'Joint Secretary',
+    category: 'Secretary',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Technical Team
+  {
+    id: 7,
+    name: 'Aditya Patel',
+    role: 'Technical Lead',
+    category: 'Technical Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 8,
+    name: 'Kavya Reddy',
+    role: 'Frontend Developer',
+    category: 'Technical Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 9,
+    name: 'Aman Verma',
+    role: 'Backend Developer',
+    category: 'Technical Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 10,
+    name: 'Nisha Jain',
+    role: 'Full Stack Developer',
+    category: 'Technical Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Design Team
+  {
+    id: 11,
+    name: 'Meera Krishnan',
+    role: 'Design Lead',
+    category: 'Design Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 12,
+    name: 'Sahil Agarwal',
+    role: 'UI/UX Designer',
+    category: 'Design Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 13,
+    name: 'Pooja Menon',
+    role: 'Graphic Designer',
+    category: 'Design Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Marketing Team
+  {
+    id: 14,
+    name: 'Rahul Desai',
+    role: 'Marketing Lead',
+    category: 'Marketing Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 15,
+    name: 'Sanya Bose',
+    role: 'Content Strategist',
+    category: 'Marketing Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 16,
+    name: 'Kiran Kumar',
+    role: 'Social Media Manager',
+    category: 'Marketing Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Management Team
+  {
+    id: 17,
+    name: 'Divya Pillai',
+    role: 'Event Manager',
+    category: 'Management Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 18,
+    name: 'Harsh Tiwari',
+    role: 'Operations Head',
+    category: 'Management Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 19,
+    name: 'Ritika Shah',
+    role: 'PR Manager',
+    category: 'Management Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+
+  // Photography Team
+  {
+    id: 20,
+    name: 'Sameer Khanna',
+    role: 'Photography Lead',
+    category: 'Photography Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+  {
+    id: 21,
+    name: 'Tanvi Sood',
+    role: 'Videographer',
+    category: 'Photography Team',
+    linkedin: '#',
+    instagram: '#',
+    avatar: null,
+  },
+];

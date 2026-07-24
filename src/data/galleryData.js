@@ -1,27 +1,47 @@
-// Gallery data — images will be actual generated/placeholder paths
 export const galleryCategories = ['All', 'Hackathons', 'Workshops', 'Events', 'Startup Expo', 'Bootcamp', 'Competitions'];
 
 export const galleryData = [
-  { id: 1, category: 'Hackathons', title: 'HackFusion 2024', src: null, height: 'tall' },
-  { id: 2, category: 'Workshops', title: 'AI/ML Bootcamp', src: null, height: 'medium' },
-  { id: 3, category: 'Events', title: 'Startup Summit', src: null, height: 'short' },
-  { id: 4, category: 'Startup Expo', title: 'InnovateFest', src: null, height: 'tall' },
-  { id: 5, category: 'Bootcamp', title: 'Design Sprint', src: null, height: 'medium' },
-  { id: 6, category: 'Competitions', title: 'Pitch Battle', src: null, height: 'short' },
-  { id: 7, category: 'Hackathons', title: 'Code Rush 2024', src: null, height: 'medium' },
-  { id: 8, category: 'Workshops', title: 'FinTech Workshop', src: null, height: 'tall' },
-  { id: 9, category: 'Events', title: 'Networking Night', src: null, height: 'short' },
-  { id: 10, category: 'Startup Expo', title: 'Demo Day', src: null, height: 'medium' },
-  { id: 11, category: 'Bootcamp', title: 'Product Bootcamp', src: null, height: 'tall' },
-  { id: 12, category: 'Competitions', title: 'IdeaX Challenge', src: null, height: 'medium' },
+  { 
+    id: 1, 
+    category: 'Events', 
+    title: 'Panel Discussion at INCUB8', 
+    src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80', 
+    height: 'tall' 
+  },
+  { 
+    id: 2, 
+    category: 'Workshops', 
+    title: 'AI/ML Bootcamp', 
+    src: 'https://images.unsplash.com/photo-1558403194-611308249627?auto=format&fit=crop&w=1200&q=80', 
+    height: 'medium' 
+  },
+  { 
+    id: 3, 
+    category: 'Hackathons', 
+    title: 'Code Rush 2024', 
+    src: 'https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80', 
+    height: 'short' 
+  },
+  { 
+    id: 4, 
+    category: 'Startup Expo', 
+    title: 'Demo Day', 
+    src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&w=1200&q=80', 
+    height: 'tall' 
+  },
+  { 
+    id: 5, 
+    category: 'Competitions', 
+    title: 'IdeaX Challenge', 
+    src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80', 
+    height: 'medium' 
+  },
 ];
 
-// Gradient colors for gallery placeholders (used when no real image is available)
 export const galleryGradients = [
   'from-blue-900 to-indigo-900',
   'from-violet-900 to-blue-900',
   'from-cyan-900 to-blue-900',
   'from-blue-900 to-slate-900',
   'from-indigo-900 to-violet-900',
-  'from-slate-900 to-blue-900',
 ];

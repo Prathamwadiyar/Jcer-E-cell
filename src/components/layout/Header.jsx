@@ -73,16 +73,16 @@ const Header = () => {
                 <span className="w-px h-4 bg-white/10 block flex-shrink-0" />
               )}
 
-              {/* JOIN US button */}
+              {/* EVENTS button */}
               <motion.a
-                href="/contact"
+                href="/events"
                 whileHover={{ scale: 1.04, boxShadow: '0 0 16px rgba(59,130,246,0.45)' }}
                 whileTap={{ scale: 0.96 }}
                 className={`inline-flex items-center font-inter font-medium rounded-full border border-white/25 text-white whitespace-nowrap
                   hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-250 flex-shrink-0
                   ${scrolled ? 'px-4 py-1.5 text-[12px]' : 'px-6 py-2 text-[13px]'}`}
               >
-                JOIN US
+                EVENTS
               </motion.a>
             </nav>
 
@@ -147,14 +147,14 @@ const Header = () => {
                 </motion.div>
               ))}
               <motion.a
-                href="/contact"
+                href="/events"
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.05 }}
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 block text-center py-2.5 rounded-full border border-white/25 text-white text-sm font-inter hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-250"
               >
-                JOIN US
+                EVENTS
               </motion.a>
             </div>
           </motion.div>

@@ -1,21 +1,12 @@
 import { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { galleryData, galleryGradients } from '../../data/galleryData';
-
-// Emojis for fallback gradient cards
-const iconEmojiMap = {
-  Hackathons: '💻',
-  Workshops: '🛠️',
-  Events: '🎉',
-  'Startup Expo': '🚀',
-  Bootcamp: '⚡',
-  Competitions: '🏆',
-  All: '✨',
-};
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { galleryData } from '../../data/galleryData';
 
 const GalleryGrid = () => {
   const [current, setCurrent] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
+  
   const total = galleryData.length;
 
   const prev = useCallback(() => {
@@ -38,14 +29,15 @@ const GalleryGrid = () => {
           style={{ borderBottomLeftRadius: '50% 100%', borderBottomRightRadius: '50% 100%' }}
         />
 
-        {/* Track - Each slide is positioned independently relative to the center */}
+        {/* Track */}
         <div className="absolute inset-0">
           {galleryData.map((slide, i) => {
-            const offset = i - current;
-            const isActive = i === current;
-            
-            // Render only items that are somewhat close to the viewport to save DOM elements
-            if (Math.abs(offset) > 3) return null;
+            // Calculate circular offset so there is no empty space
+            let offset = (i - current) % total;
+            if (offset > Math.floor(total / 2)) offset -= total;
+            if (offset < -Math.floor(total / 2)) offset += total;
+
+            const isActive = offset === 0;
 
             return (
               <motion.div 
@@ -57,19 +49,11 @@ const GalleryGrid = () => {
                 onClick={() => setCurrent(i)}
                 style={{ zIndex: isActive ? 10 : 5 }}
               >
-                {slide.src ? (
-                  <img 
-                    src={slide.src} 
-                    alt={slide.title} 
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className={`w-full h-full flex flex-col items-center justify-center bg-gradient-to-br ${galleryGradients[i % galleryGradients.length]}`}>
-                    <div className="text-5xl md:text-6xl mb-4">{iconEmojiMap[slide.category]}</div>
-                    <p className="text-white font-sora font-semibold text-lg md:text-xl text-center px-4">{slide.title}</p>
-                    <p className="text-white/60 font-inter text-sm mt-2">{slide.category}</p>
-                  </div>
-                )}
+                <img 
+                  src={slide.src} 
+                  alt={slide.title} 
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Dark overlay for inactive slides */}
                 <motion.div
@@ -90,8 +74,8 @@ const GalleryGrid = () => {
         />
       </div>
 
-      {/* ── Controls ── */}
-      <div className="flex items-center justify-center gap-6 mt-8 mb-16 px-4">
+      {/* ── Carousel Controls ── */}
+      <div className="flex items-center justify-center gap-6 mt-8 mb-8 px-4">
         <button
           onClick={prev}
           className="w-10 h-10 rounded-full bg-[#111] border border-white/10 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
@@ -112,6 +96,57 @@ const GalleryGrid = () => {
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
+
+      {/* ── All Images Grid ── */}
+      <div className="max-w-7xl mx-auto px-6 py-12 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {galleryData.map((item) => (
+            <motion.div
+              key={item.id}
+              whileHover={{ y: -6 }}
+              onClick={() => setLightbox(item.src)}
+              className="relative rounded-xl overflow-hidden cursor-pointer group aspect-[4/3] glass border border-white/5"
+            >
+              <img src={item.src} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-6">
+                <div>
+                  <p className="text-white font-sora font-semibold text-lg">{item.title}</p>
+                  <p className="text-ecell-blue text-sm font-inter">{item.category}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Lightbox ── */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightbox(null)}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-12"
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-all z-50"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              src={lightbox}
+              alt="Fullscreen view"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

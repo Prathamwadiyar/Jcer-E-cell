@@ -42,10 +42,10 @@ const Header = () => {
           }`}
           style={{ maxWidth: scrolled ? '1020px' : '100%' }}
         >
-          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-13 px-5' : 'h-16 px-0'}`}>
+          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-13 px-5 gap-10' : 'h-16 px-0 gap-4'}`}>
 
             {/* Left: Logo */}
-            <Link to="/" className="flex-shrink-0 z-10">
+            <Link to="/" className="flex-shrink-0 z-10 mr-4 md:mr-8">
               <img
                 src={logoImg}
                 alt="E-Cell Logo"

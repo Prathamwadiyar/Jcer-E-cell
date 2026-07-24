@@ -37,8 +37,8 @@ export const teamData = [
     name: 'Swayam Khangaonkar',
     role: 'LEAD WEB & TECH',
     category: 'Web & Tech',
-    linkedin: '#',
-    email: 'mailto:contact@example.com',
+    linkedin: 'https://www.linkedin.com/in/swayam-khangaonkar-227bab345',
+    email: 'mailto:swayamuk1@gmail.com',
     avatar: swayamImg,
   },
   // 5. Pratham Wadeyar

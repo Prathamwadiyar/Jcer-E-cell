@@ -31,7 +31,7 @@ const Timeline = () => {
           >
             ROADMAP
           </span>
-          <p className="relative z-10 text-[#3b82f6] font-sora text-[11px] font-bold tracking-[0.28em] uppercase mb-2">
+          <p className="relative z-10 text-[#3b82f6] font-sora text-[11px] font-bold tracking-[0.28em] uppercase mb-8">
             Our Journey
           </p>
           <h2
@@ -44,7 +44,7 @@ const Timeline = () => {
           >
             A Journey of Impact
           </h2>
-          <p className="relative z-10 text-ecell-gray/60 max-w-lg mx-auto text-sm leading-relaxed">
+          <p className="relative z-10 text-ecell-gray/60 max-w-lg mx-auto text-sm leading-relaxed mt-6">
             From a small group of dreamers to one of Karnataka's most vibrant entrepreneurship cells.
           </p>
         </div>

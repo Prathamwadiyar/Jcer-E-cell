@@ -63,7 +63,7 @@ const MissionVision = () => {
 
         {/* Mission & Vision */}
         <div className="text-center mb-12">
-          <SectionBadge className="mb-5">Our Purpose</SectionBadge>
+          <SectionBadge className="mb-5 !text-white">Our Purpose</SectionBadge>
           <h2 className="section-heading text-4xl md:text-5xl mb-4">Mission & Vision</h2>
         </div>
 

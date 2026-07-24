@@ -13,10 +13,10 @@ const quickLinks = [
 ];
 
 const resources = [
-  { label: 'Events', to: '/gallery' },
-  { label: 'Blogs', to: '#' },
+  { label: 'Upcoming Events', to: '/gallery' },
+  { label: 'Achievements', to: '#' },
+  { label: 'Student Startups', to: '#' },
   { label: 'FAQs', to: '#' },
-  { label: 'Privacy Policy', to: '#' },
 ];
 
 const socials = [
@@ -48,8 +48,9 @@ const Footer = () => {
             <Link to="/" className="inline-block mb-5">
               <img src={logoImg} alt="E-Cell Logo" className="h-9 object-contain" />
             </Link>
-            <p className="text-ecell-gray/70 text-sm leading-relaxed mb-5">
-              Empowering student innovators and future entrepreneurs at the intersection of technology, creativity, and ambition.
+            <h3 className="font-sora font-semibold text-white text-lg mb-1">Ideas Into Impact</h3>
+            <p className="text-ecell-gray/70 text-sm leading-relaxed mb-5 italic">
+              "Empowering Students. Building Entrepreneurs."
             </p>
             <div className="flex gap-2.5 flex-wrap">
               {socials.map(({ icon: Icon, href, label }) => (
@@ -127,15 +128,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-ecell-glow mt-0.5 flex-shrink-0" />
-                <p className="text-ecell-gray/70 text-sm">ecell@college.edu.in</p>
+                <p className="text-ecell-gray/70 text-sm">officialecell@jcer.in</p>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-ecell-glow mt-0.5 flex-shrink-0" />
-                <p className="text-ecell-gray/70 text-sm">+91 98765 43210</p>
+                <p className="text-ecell-gray/70 text-sm">+91 Contact Number</p>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-ecell-glow mt-0.5 flex-shrink-0" />
-                <p className="text-ecell-gray/70 text-sm leading-relaxed">SAC Block D, College Campus, City – 400001</p>
+                <p className="text-ecell-gray/70 text-sm leading-relaxed">Jain College of Engineering & Research (JCER), Belagavi, Karnataka</p>
               </li>
             </ul>
           </motion.div>
@@ -147,10 +148,10 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/30 text-xs font-inter">
-            © {new Date().getFullYear()} E-Cell. All rights reserved.
+            © {new Date().getFullYear()} E-Cell JCER. All rights reserved.
           </p>
           <p className="text-white/30 text-xs font-inter flex items-center gap-1">
-            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by E-Cell Technical Team
+            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> by JCER Web Team
           </p>
         </div>
       </div>

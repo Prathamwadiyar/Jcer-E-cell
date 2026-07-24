@@ -40,30 +40,28 @@ const Header = () => {
               : /* Top: full-width transparent */
                 'w-full px-6 lg:px-10 py-2 bg-transparent border-b border-transparent'
           }`}
-          style={{ maxWidth: scrolled ? '820px' : '100%' }}
+          style={{ maxWidth: scrolled ? '940px' : '100%' }}
         >
-          <div className={`flex items-center transition-all duration-500 w-full ${scrolled ? 'h-11 px-2' : 'h-16 px-0'}`}>
+          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-11 px-4' : 'h-16 px-0'}`}>
 
             {/* Left: Logo */}
-            <div className="flex-1 flex justify-start">
-              <Link to="/" className="flex-shrink-0">
-                <img
-                  src={logoImg}
-                  alt="E-Cell Logo"
-                  className={`object-contain transition-all duration-300 ${scrolled ? 'h-8' : 'h-14'}`}
-                />
-              </Link>
-            </div>
+            <Link to="/" className="flex-shrink-0 z-10">
+              <img
+                src={logoImg}
+                alt="E-Cell Logo"
+                className={`object-contain transition-all duration-300 ${scrolled ? 'h-8' : 'h-14'}`}
+              />
+            </Link>
 
             {/* Center: Desktop Nav */}
-            <nav className={`hidden md:flex items-center justify-center transition-all duration-500 ${scrolled ? 'gap-6' : 'gap-8'}`}>
+            <nav className={`hidden md:flex flex-1 items-center justify-center transition-all duration-500 ${scrolled ? 'gap-4 lg:gap-6' : 'gap-8'}`}>
               {navLinks.map(({ to, label }) => (
                 <NavLink
                   key={to}
                   to={to}
                   end={to === '/'}
                   className={({ isActive }) =>
-                    `nav-link text-xs font-medium tracking-wide ${scrolled ? 'text-[13px]' : ''} ${isActive ? 'active' : ''}`
+                    `nav-link text-xs font-medium tracking-wide whitespace-nowrap ${scrolled ? 'text-[13px]' : ''} ${isActive ? 'active' : ''}`
                   }
                 >
                   {label}
@@ -72,7 +70,7 @@ const Header = () => {
 
               {/* Vertical separator for scrolled state */}
               {scrolled && (
-                <span className="w-px h-4 bg-white/10 block" />
+                <span className="w-px h-4 bg-white/10 block flex-shrink-0" />
               )}
 
               {/* JOIN US button */}
@@ -80,35 +78,35 @@ const Header = () => {
                 href="/contact"
                 whileHover={{ scale: 1.04, boxShadow: '0 0 16px rgba(59,130,246,0.45)' }}
                 whileTap={{ scale: 0.96 }}
-                className={`inline-flex items-center font-inter font-medium rounded-full border border-white/25 text-white
-                  hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-250
+                className={`inline-flex items-center font-inter font-medium rounded-full border border-white/25 text-white whitespace-nowrap
+                  hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-250 flex-shrink-0
                   ${scrolled ? 'px-4 py-1.5 text-[12px]' : 'px-6 py-2 text-[13px]'}`}
               >
                 JOIN US
               </motion.a>
             </nav>
 
-            {/* Right: Hamburger spacer */}
-            <div className="flex-1 flex justify-end">
-              {/* Hamburger (mobile) */}
-              <button
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-white border border-white/10 hover:border-ecell-blue/50 hover:bg-ecell-blue/10 transition-all duration-200"
-                aria-label="Toggle menu"
-              >
-                <AnimatePresence mode="wait" initial={false}>
-                  {menuOpen ? (
-                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}>
-                      <X className="w-4 h-4" />
-                    </motion.div>
-                  ) : (
-                    <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.18 }}>
-                      <Menu className="w-4 h-4" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </button>
-            </div>
+            {/* Right: Hamburger spacer to balance logo */}
+            <div className="hidden md:block w-[80px]"></div>
+            
+            {/* Hamburger (mobile) */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-white border border-white/10 hover:border-ecell-blue/50 hover:bg-ecell-blue/10 transition-all duration-200"
+              aria-label="Toggle menu"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                {menuOpen ? (
+                  <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}>
+                    <X className="w-4 h-4" />
+                  </motion.div>
+                ) : (
+                  <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.18 }}>
+                    <Menu className="w-4 h-4" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
           </div>
         </motion.header>
       </div>

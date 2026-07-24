@@ -17,20 +17,22 @@ const MissionVision = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <SectionBadge className="mb-5">Our Story</SectionBadge>
+            <SectionBadge className="mb-5">Our Activities</SectionBadge>
             <h2 className="section-heading text-4xl md:text-5xl mb-6">
-              Who We Are
+              What We Do
             </h2>
             <div className="space-y-4 text-ecell-gray leading-relaxed">
               <p>
-                E-Cell is the official Entrepreneurship Cell of our college — a dynamic community where curious minds transform bold ideas into real-world ventures. Founded with the belief that every student has the potential to be a change-maker.
+                We organize various activities that inspire students to innovate, lead, and create.
               </p>
-              <p>
-                We create a fertile ecosystem for innovation by connecting students with mentors, investors, industry leaders, and fellow entrepreneurs. From ideation to launch, we support every step of the entrepreneurial journey.
-              </p>
-              <p>
-                Our events, workshops, hackathons, and startup bootcamps have catalyzed over 42 student-led startups and raised significant funding from leading venture firms.
-              </p>
+              <ul className="list-disc list-inside space-y-2 text-sm mt-4 text-ecell-gray/90">
+                <li>Entrepreneurship Awareness Programs</li>
+                <li>Startup Workshops</li>
+                <li>Founder Talks & Guest Lectures</li>
+                <li>Idea Pitching & Business Plan Competitions</li>
+                <li>Hackathons & Innovation Challenges</li>
+                <li>Networking Sessions & Mentorship Opportunities</li>
+              </ul>
             </div>
           </motion.div>
 
@@ -79,7 +81,7 @@ const MissionVision = () => {
             </div>
             <h3 className="font-sora font-bold text-2xl text-white mb-4">Our Mission</h3>
             <p className="text-ecell-gray leading-relaxed">
-              To cultivate an entrepreneurial mindset among students by providing the resources, mentorship, and platform needed to transform innovative ideas into successful ventures — bridging the gap between academia and industry.
+              To empower students through opportunities, collaboration, and real-world entrepreneurial experiences.
             </p>
           </motion.div>
 
@@ -96,7 +98,7 @@ const MissionVision = () => {
             </div>
             <h3 className="font-sora font-bold text-2xl text-white mb-4">Our Vision</h3>
             <p className="text-ecell-gray leading-relaxed">
-              To be India's most impactful college entrepreneurship cell — a breeding ground for startups that solve real-world problems, create jobs, and drive economic and social progress through technology and innovation.
+              To build a campus where innovation, entrepreneurship, and leadership thrive.
             </p>
           </motion.div>
         </div>

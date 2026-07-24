@@ -9,14 +9,7 @@ const AboutHero = () => {
       <div className="orb orb-cyan absolute bottom-0 right-1/3 w-[400px] h-[300px] opacity-15 pointer-events-none" />
 
       <div className="relative z-10 text-center px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-5"
-        >
-          <SectionBadge>Who We Are</SectionBadge>
-        </motion.div>
+        {/* Removed Who We Are badge */}
 
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
@@ -27,14 +20,22 @@ const AboutHero = () => {
           About <span className="gradient-text">E-Cell</span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.2 }}
-          className="text-ecell-gray/70 text-lg max-w-2xl mx-auto leading-relaxed"
+          className="text-ecell-gray/80 text-base md:text-lg max-w-4xl mx-auto leading-relaxed space-y-4"
         >
-          Fostering a culture of innovation and entrepreneurship since our founding, E-Cell is the beating heart of startup activity at our college.
-        </motion.p>
+          <p>
+            The Entrepreneurship Cell (E-Cell) of JCER Belagavi is committed to building an entrepreneurial ecosystem within the campus. We encourage students to think beyond the classroom, develop innovative ideas, and build leadership skills.
+          </p>
+          <p>
+            Through workshops, startup talks, competitions, hackathons, and networking events, E-Cell provides students with opportunities to gain practical knowledge, connect with industry experts, and transform ideas into reality.
+          </p>
+          <p>
+            Whether you dream of launching a startup or simply want to learn about entrepreneurship, E-Cell is the place to begin your journey.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ scaleX: 0 }}

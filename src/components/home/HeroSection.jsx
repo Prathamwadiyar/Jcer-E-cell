@@ -134,7 +134,7 @@ const HeroSection = () => {
             variants={fadeUp}
             className="font-sora font-bold text-5xl md:text-[64px] lg:text-[72px] text-white leading-[1.06] tracking-tight"
           >
-            Empowering <span className="gradient-text">Student</span> Innovation
+            Ideas Into <span className="gradient-text">Impact</span>
           </motion.h1>
 
           <motion.div variants={fadeUp} className="flex items-center justify-center gap-2 my-2">
@@ -142,18 +142,20 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.5 }}
-              className="font-sora font-semibold text-2xl md:text-3xl gradient-text"
+              className="font-sora font-semibold text-xl md:text-2xl gradient-text"
             >
-              Build, Innovate, Lead.
+              Empowering Innovation. Inspiring Entrepreneurs.
             </motion.p>
           </motion.div>
 
-          <motion.p
-            variants={fadeUp}
-            className="text-ecell-gray/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
-          >
-            Where ideas meet ambition. The official Entrepreneurship Cell empowers students to build, launch, and scale their boldest ventures through mentorship, funding, and a thriving community.
-          </motion.p>
+          <motion.div variants={fadeUp} className="text-ecell-gray/80 text-base md:text-lg leading-relaxed max-w-3xl mx-auto space-y-4">
+            <p className="font-semibold text-white/90">
+              Welcome to the Entrepreneurship Cell (E-Cell), JCER Belagavi.
+            </p>
+            <p>
+              The Entrepreneurship Cell (E-Cell) at JCER is a student-led initiative dedicated to fostering innovation, creativity, and entrepreneurship. We provide a platform where students can learn, collaborate, and transform ideas into impactful ventures through workshops, events, mentorship, and networking opportunities.
+            </p>
+          </motion.div>
 
           <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-4 pt-1">
             <Link to="/contact">

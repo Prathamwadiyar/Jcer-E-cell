@@ -5,12 +5,12 @@ import GlowButton from '../ui/GlowButton';
 import { Link } from 'react-router-dom';
 
 const reasons = [
-  { icon: Network, title: 'Unrivaled Network', desc: 'Connect with 1200+ students, alumni founders, VCs, and industry mentors who accelerate your growth.' },
-  { icon: Award, title: 'Win Real Prizes', desc: 'Compete in hackathons and pitch competitions with prizes worth lakhs and investor attention.' },
-  { icon: Users, title: 'Community First', desc: 'Join a passionate tribe of builders who brainstorm, collaborate, and celebrate together.' },
-  { icon: Lightbulb, title: 'Idea to Launch', desc: 'Get structured mentorship and resources to take your idea from a napkin sketch to a real product.' },
-  { icon: Briefcase, title: 'Career Edge', desc: 'E-Cell alumni are hired at top startups and MNCs — entrepreneurial experience sets you apart.' },
-  { icon: Globe, title: 'Global Exposure', desc: 'Represent our college at national and international startup events, summits, and competitions.' },
+  { icon: Network, title: 'Build Networks', desc: 'Build professional networks with industry experts and peers.' },
+  { icon: Award, title: 'Participate & Compete', desc: 'Participate in workshops, competitions, and startup events.' },
+  { icon: Users, title: 'Collaborate', desc: 'Work on innovative ideas with like-minded students.' },
+  { icon: Lightbulb, title: 'Learn from Leaders', desc: 'Learn from successful entrepreneurs and mentors.' },
+  { icon: Briefcase, title: 'Real-world Experience', desc: 'Gain real-world entrepreneurial experience.' },
+  { icon: Globe, title: 'Personal Growth', desc: 'Develop leadership, communication skills, and enhance professional growth.' },
 ];
 
 const WhyJoin = () => {
@@ -24,7 +24,7 @@ const WhyJoin = () => {
           <SectionBadge className="mb-5">Be Part of It</SectionBadge>
           <h2 className="section-heading text-4xl md:text-5xl mb-4">Why Join E-Cell?</h2>
           <p className="text-ecell-gray max-w-xl mx-auto">
-            Six compelling reasons why the smartest students at our college choose E-Cell.
+            Joining E-Cell helps you develop your skills and grow your professional network.
           </p>
         </div>
 
@@ -57,10 +57,10 @@ const WhyJoin = () => {
           className="glass glow-border rounded-2xl p-10 text-center"
         >
           <h3 className="font-sora font-bold text-3xl text-white mb-3">
-            Ready to Build Something Great?
+            Join Us
           </h3>
           <p className="text-ecell-gray mb-8 max-w-lg mx-auto">
-            Applications for the next cohort are open. Join 1200+ innovators shaping the future.
+            Become a part of JCER E-Cell and start your entrepreneurial journey. Learn. Collaborate. Innovate. Lead.
           </p>
           <Link to="/contact">
             <GlowButton variant="primary" size="lg">

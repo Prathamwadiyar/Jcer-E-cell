@@ -53,14 +53,14 @@ const Header = () => {
           }`}
           style={{ maxWidth: scrolled ? '1020px' : '100%' }}
         >
-          <div className={`flex items-center justify-between transition-all duration-700 w-full ${scrolled ? 'h-13 px-5 gap-6 lg:gap-8' : 'h-16 px-0 gap-4'}`}>
+          <div className={`flex items-center justify-between transition-all duration-700 w-full ${scrolled ? 'h-13 px-5 gap-6 lg:gap-8' : 'h-16 md:h-24 px-0 gap-4'}`}>
 
             {/* Left: Logo */}
             <Link to="/" className="flex-shrink-0 z-10 mr-2 md:mr-4">
               <img
                 src={logoImg}
                 alt="E-Cell Logo"
-                className={`object-contain transition-all duration-300 ${scrolled ? 'h-10' : 'h-14'}`}
+                className={`object-contain transition-all duration-500 ${scrolled ? 'h-10' : 'h-14 md:h-20 lg:h-24'}`}
               />
             </Link>
 

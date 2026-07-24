@@ -52,13 +52,13 @@ const Timeline = () => {
         {/* Timeline grid */}
         <div className="relative">
 
-          {/* Vertical center line */}
+          {/* Vertical center line (hidden on mobile) */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
+            className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2"
             style={{ background: 'linear-gradient(180deg, #3B82F6 0%, #60A5FA 60%, transparent 100%)' }}
           />
 
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-3 md:gap-0">
             {milestones.map(({ month, year, title, desc }, i) => {
               const isLeft = i % 2 === 0;
               return (
@@ -69,27 +69,12 @@ const Timeline = () => {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.5, delay: i * 0.06 }}
                 >
-                  {/* ── MOBILE: left-line single-column card ── */}
-                  <div className="md:hidden flex gap-4 items-start py-4 pl-2">
-                    {/* Left line + dot */}
-                    <div className="flex flex-col items-center flex-shrink-0 mt-1">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: i * 0.06 + 0.15, type: 'spring' }}
-                        className="w-3 h-3 rounded-full bg-ecell-blue border-2 border-ecell-glow z-10"
-                        style={{ boxShadow: '0 0 8px rgba(59,130,246,0.7)' }}
-                      />
-                      {i < milestones.length - 1 && (
-                        <div className="w-px flex-1 mt-1" style={{ minHeight: '60px', background: 'linear-gradient(180deg, #3B82F6, rgba(96,165,250,0.15))' }} />
-                      )}
-                    </div>
-                    {/* Card */}
-                    <div className="flex-1 glass rounded-xl p-4 glow-border mb-2">
-                      <p className="text-[#60a5fa] font-sora font-bold text-[10px] tracking-widest uppercase mb-0.5">{month}</p>
-                      <h4 className="font-sora font-semibold text-white text-sm mb-1">{title}</h4>
-                      <p className="text-ecell-gray/60 text-xs leading-relaxed">{desc}</p>
+                  {/* ── MOBILE: Simple full-width card without lines/dots ── */}
+                  <div className="md:hidden w-full py-2">
+                    <div className="glass rounded-xl p-5 glow-border w-full shadow-lg">
+                      <p className="text-[#60a5fa] font-sora font-bold text-[11px] tracking-widest uppercase mb-1">{month}</p>
+                      <h4 className="font-sora font-semibold text-white text-[15px] mb-2">{title}</h4>
+                      <p className="text-ecell-gray/70 text-sm leading-relaxed">{desc}</p>
                     </div>
                   </div>
 

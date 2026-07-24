@@ -40,21 +40,21 @@ const Header = () => {
               : /* Top: full-width transparent */
                 'w-full px-6 lg:px-10 py-2 bg-transparent border-b border-transparent'
           }`}
-          style={{ maxWidth: scrolled ? '940px' : '100%' }}
+          style={{ maxWidth: scrolled ? '1020px' : '100%' }}
         >
-          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-11 px-4' : 'h-16 px-0'}`}>
+          <div className={`flex items-center justify-between transition-all duration-500 w-full ${scrolled ? 'h-13 px-5' : 'h-16 px-0'}`}>
 
             {/* Left: Logo */}
             <Link to="/" className="flex-shrink-0 z-10">
               <img
                 src={logoImg}
                 alt="E-Cell Logo"
-                className={`object-contain transition-all duration-300 ${scrolled ? 'h-8' : 'h-14'}`}
+                className={`object-contain transition-all duration-300 ${scrolled ? 'h-10' : 'h-14'}`}
               />
             </Link>
 
             {/* Center: Desktop Nav */}
-            <nav className={`hidden md:flex flex-1 items-center justify-center transition-all duration-500 ${scrolled ? 'gap-4 lg:gap-6' : 'gap-8'}`}>
+            <nav className={`hidden md:flex flex-1 items-center justify-center transition-all duration-500 ${scrolled ? 'gap-5 lg:gap-8' : 'gap-8'}`}>
               {navLinks.map(({ to, label }) => (
                 <NavLink
                   key={to}
@@ -86,8 +86,8 @@ const Header = () => {
               </motion.a>
             </nav>
 
-            {/* Right: Hamburger spacer to balance logo */}
-            <div className="hidden md:block w-[80px]"></div>
+            {/* Right: Balance spacer + JOIN US only shows outside nav on non-scrolled */}
+            <div className="hidden md:block flex-shrink-0" style={{ minWidth: '90px' }}></div>
             
             {/* Hamburger (mobile) */}
             <button

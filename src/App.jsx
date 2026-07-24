@@ -1,8 +1,10 @@
+import { useState, useCallback } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import SocialBar from './components/layout/SocialBar';
+import SplashScreen from './components/SplashScreen';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -25,8 +27,14 @@ const AnimatedRoutes = () => {
 };
 
 const App = () => {
+  const [splashDone, setSplashDone] = useState(false);
+  const handleSplashDone = useCallback(() => setSplashDone(true), []);
+
   return (
     <BrowserRouter>
+      {/* Splash – always shows on load/refresh, unmounts after completing */}
+      {!splashDone && <SplashScreen onDone={handleSplashDone} />}
+
       <div className="min-h-screen bg-ecell-bg flex flex-col">
         <Header />
         <SocialBar />

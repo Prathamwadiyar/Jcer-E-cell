@@ -76,37 +76,19 @@ const ContactInfo = () => {
         })}
       </div>
 
-      {/* Map — clicking opens Google Maps */}
-      <a
-        href={MAPS_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block rounded-2xl overflow-hidden border border-white/[0.08] h-52 relative group"
-        aria-label="Open location in Google Maps"
-      >
-        <div className="w-full h-full bg-gradient-to-br from-ecell-bg2 to-ecell-bg flex items-center justify-center relative">
-          {/* Fake map grid */}
-          <div className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(59,130,246,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.1) 1px, transparent 1px)',
-              backgroundSize: '30px 30px'
-            }}
-          />
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-ecell-blue/0 group-hover:bg-ecell-blue/5 transition-all duration-300 flex items-end justify-center pb-3">
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-ecell-glow text-xs font-inter font-medium">
-              Open in Google Maps ↗
-            </span>
-          </div>
-          <div className="relative text-center">
-            <div className="w-10 h-10 rounded-full bg-ecell-blue shadow-glow-md flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
-              <MapPin className="w-5 h-5 text-white" />
-            </div>
-            <p className="text-white text-xs font-inter font-semibold">Jain College Of Engineering & Research</p>
-            <p className="text-ecell-gray/60 text-[10px] mt-1 max-w-[200px] mx-auto leading-snug">Udyambag, Angol, Belagavi, Karnataka 590008</p>
-          </div>
-        </div>
-      </a>
+      {/* Embedded Google Maps */}
+      <div className="rounded-2xl overflow-hidden border border-white/[0.08] h-64 relative">
+        <iframe
+          title="Jain College Of Engineering & Research Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3847.2282349185!2d74.49396887587!3d15.847661884889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf668f2e1e7e7f%3A0x4b9c6a1b2e3d4e5f!2sJGI%20-%20Jain%20College%20Of%20Engineering%20And%20Research!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) saturate(0.8) brightness(0.85)' }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
     </motion.div>
   );
 };

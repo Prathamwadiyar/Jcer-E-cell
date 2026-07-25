@@ -7,7 +7,7 @@ const Gallery = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.5 } }}
       exit={{ opacity: 0 }}
-      className="bg-black min-h-screen pt-32"
+      className="bg-transparent min-h-screen pt-32"
     >
       {/* Header */}
       <div className="text-center px-6 mb-16">

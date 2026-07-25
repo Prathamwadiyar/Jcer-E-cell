@@ -1,4 +1,28 @@
-import swayamImg from '../assets/swayam.png';
+import swayamImg from '../assets/swayam.jpg';
+import prathamImg from '../assets/pratham.jpg';
+import aliImg from '../assets/ali.jpg';
+import seemaImg from '../assets/seema.jpg';
+import pratikImg from '../assets/pratik.jpg';
+import saniyaImg from '../assets/saniya.jpg';
+import omkarImg from '../assets/omkar.jpg';
+import pranaliImg from '../assets/pranali.jpg';
+import shreyaGImg from '../assets/shreya_g.jpg';
+import kshitijImg from '../assets/kshitij.jpg';
+import kesarImg from '../assets/kesar.jpg';
+import sheetalImg from '../assets/sheetal.jpg';
+import sarthakImg from '../assets/sarthak.jpg';
+import sohamImg from '../assets/soham.jpg';
+import hemantImg from '../assets/hemant.jpg';
+import sakshiImg from '../assets/sakshi.jpg';
+import vikasImg from '../assets/vikas.jpg';
+import rahulImg from '../assets/rahul.jpg';
+import atharvaImg from '../assets/atharva.jpg';
+import vaishnaviImg from '../assets/vaishnavi.jpg';
+import akashImg from '../assets/akash.jpg';
+import tejalImg from '../assets/tejal.jpg';
+import shreyaPImg from '../assets/shreya_p.jpg';
+import shreyaBImg from '../assets/shreya_b.jpg';
+import sanketImg from '../assets/sanket.jpg';
 
 export const teamData = [
   // 1. Omkar V Shirvalkar
@@ -9,7 +33,7 @@ export const teamData = [
     category: 'Overall Coordinators',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: omkarImg,
   },
   // 2. Saniya Gorikhan
   {
@@ -19,7 +43,7 @@ export const teamData = [
     category: 'Overall Coordinators',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: saniyaImg,
   },
   // 3. Pranali Basarikatti
   {
@@ -29,7 +53,7 @@ export const teamData = [
     category: 'Managers',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: pranaliImg,
   },
   // 4. Swayam Khangaonkar
   {
@@ -41,15 +65,15 @@ export const teamData = [
     email: 'mailto:swayamuk1@gmail.com',
     avatar: swayamImg,
   },
-  // 5. Pratham Wadeyar
+  // 5. Pratham Wadiyar
   {
     id: 8,
-    name: 'Pratham Wadeyar',
+    name: 'Pratham Wadiyar',
     role: 'LEAD WEB & TECH',
     category: 'Web & Tech',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: prathamImg,
   },
   // 6. Sarthak Chillal
   {
@@ -59,7 +83,7 @@ export const teamData = [
     category: 'Content & Research',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: sarthakImg,
   },
   // 7. Sheetal Ingale
   {
@@ -69,7 +93,7 @@ export const teamData = [
     category: 'Content & Research',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: sheetalImg,
   },
   // 8. Rahul AK
   {
@@ -79,7 +103,7 @@ export const teamData = [
     category: 'Events & PR',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: rahulImg,
   },
 
   // Remaining randomly/ordered
@@ -90,7 +114,7 @@ export const teamData = [
     category: 'Managers',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: kesarImg,
   },
   {
     id: 5,
@@ -99,7 +123,7 @@ export const teamData = [
     category: 'Managers',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: shreyaGImg,
   },
   {
     id: 6,
@@ -108,7 +132,7 @@ export const teamData = [
     category: 'Managers',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: kshitijImg,
   },
   {
     id: 9,
@@ -117,7 +141,7 @@ export const teamData = [
     category: 'Web & Tech',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: pratikImg,
   },
   {
     id: 10,
@@ -126,7 +150,16 @@ export const teamData = [
     category: 'Web & Tech',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: seemaImg,
+  },
+  {
+    id: 25,
+    name: 'Md. Ali Nadaf',
+    role: 'CO-ORDINATOR (WEB & TECH)',
+    category: 'Web & Tech',
+    linkedin: '#',
+    email: 'mailto:contact@example.com',
+    avatar: aliImg,
   },
   {
     id: 11,
@@ -135,7 +168,7 @@ export const teamData = [
     category: 'Design & Media',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: atharvaImg,
   },
   {
     id: 12,
@@ -144,7 +177,7 @@ export const teamData = [
     category: 'Design & Media',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: vaishnaviImg,
   },
   {
     id: 13,
@@ -153,7 +186,7 @@ export const teamData = [
     category: 'Design & Media',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: akashImg,
   },
   {
     id: 14,
@@ -162,7 +195,7 @@ export const teamData = [
     category: 'Design & Media',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: tejalImg,
   },
   {
     id: 17,
@@ -171,7 +204,7 @@ export const teamData = [
     category: 'Content & Research',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: sohamImg,
   },
   {
     id: 19,
@@ -180,7 +213,7 @@ export const teamData = [
     category: 'Events & PR',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: hemantImg,
   },
   {
     id: 20,
@@ -189,7 +222,7 @@ export const teamData = [
     category: 'Events & PR',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: vikasImg,
   },
   {
     id: 21,
@@ -198,7 +231,7 @@ export const teamData = [
     category: 'Events & PR',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: sakshiImg,
   },
   {
     id: 22,
@@ -207,7 +240,7 @@ export const teamData = [
     category: 'Corporate & Marketing',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: shreyaPImg,
   },
   {
     id: 23,
@@ -216,7 +249,7 @@ export const teamData = [
     category: 'Corporate & Marketing',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: shreyaBImg,
   },
   {
     id: 24,
@@ -225,6 +258,6 @@ export const teamData = [
     category: 'Corporate & Marketing',
     linkedin: '#',
     email: 'mailto:contact@example.com',
-    avatar: null,
+    avatar: sanketImg,
   },
 ];

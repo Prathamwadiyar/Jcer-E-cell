@@ -17,6 +17,10 @@
 
   body {
     background-color: #000000;
+    background-image: radial-gradient(ellipse 140% 90% at 50% 100%, #082d6b 0%, #031333 45%, #000000 85%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #C9D1D9;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;

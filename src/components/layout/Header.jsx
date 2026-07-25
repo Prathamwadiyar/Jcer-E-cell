@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logoImg from '../../assets/logo.png';
 
 const navLinks = [
@@ -9,14 +9,14 @@ const navLinks = [
   { to: '/about', label: 'About Us' },
   { to: '/gallery', label: 'Gallery' },
   { to: '/team', label: 'Meet Our Team' },
+  { to: '/blog', label: 'Blogs' },
   { to: '/contact', label: 'Contact' },
 ];
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [eventsOpen, setEventsOpen] = useState(false);
-  const eventsRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -25,17 +25,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => { setMenuOpen(false); }, [location.pathname]);
-
-  // Close events dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (eventsRef.current && !eventsRef.current.contains(e.target)) {
-        setEventsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   return (
     <>
@@ -78,57 +67,7 @@ const Header = () => {
                   {label}
                 </NavLink>
               ))}
-
-              {/* Vertical separator for scrolled state (if needed, otherwise remove) */}
-              {scrolled && (
-                <span className="w-px h-4 bg-white/10 block flex-shrink-0 ml-2" />
-              )}
             </nav>
-
-            {/* Right: Upcoming Events & Blogs dropdown button */}
-            <div ref={eventsRef} className="relative hidden md:block flex-shrink-0 z-20">
-              <motion.button
-                onClick={() => setEventsOpen(!eventsOpen)}
-                whileHover={{ scale: 1.04, boxShadow: '0 0 16px rgba(59,130,246,0.45)' }}
-                whileTap={{ scale: 0.96 }}
-                className={`inline-flex items-center gap-1.5 font-inter font-medium rounded-full border border-white/25 text-white whitespace-nowrap
-                  hover:bg-ecell-blue hover:border-ecell-blue transition-all duration-300
-                  ${scrolled ? 'px-4 py-1.5 text-[12px]' : 'px-5 py-2 text-[13px]'}`}
-              >
-                Upcoming Events & Blogs
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${eventsOpen ? 'rotate-180' : ''}`} />
-              </motion.button>
-
-              {/* Dropdown */}
-              <AnimatePresence>
-                {eventsOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -6, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -6, scale: 0.96 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 mt-3 w-44 rounded-xl bg-black/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.7)] overflow-hidden z-50"
-                  >
-                    <Link
-                      to="/events"
-                      onClick={() => setEventsOpen(false)}
-                      className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-200 border-b border-white/[0.06]"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
-                      Events
-                    </Link>
-                    <Link
-                      to="/blog"
-                      onClick={() => setEventsOpen(false)}
-                      className="flex items-center gap-2 px-4 py-3 text-sm text-ecell-gray hover:text-white hover:bg-ecell-blue/15 transition-all duration-200"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-ecell-glow" />
-                      Blog
-                    </Link>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
             
             {/* Hamburger (mobile) */}
             <button
@@ -187,20 +126,6 @@ const Header = () => {
                   </NavLink>
                 </motion.div>
               ))}
-              <Link
-                to="/events"
-                onClick={() => setMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-xl text-sm font-inter transition-all duration-200 text-ecell-gray hover:text-white hover:bg-white/[0.04]"
-              >
-                Events
-              </Link>
-              <Link
-                to="/blog"
-                onClick={() => setMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-xl text-sm font-inter transition-all duration-200 text-ecell-gray hover:text-white hover:bg-white/[0.04]"
-              >
-                Blog
-              </Link>
             </div>
           </motion.div>
         )}

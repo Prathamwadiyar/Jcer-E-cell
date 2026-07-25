@@ -28,7 +28,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black overflow-hidden">
+    <footer className="relative bg-transparent overflow-hidden">
       {/* Blue top accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-ecell-blue to-transparent opacity-60" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-24 bg-ecell-blue/5 blur-2xl pointer-events-none" />
@@ -126,7 +126,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-ecell-glow mt-0.5 flex-shrink-0" />
-                <p className="text-ecell-gray/70 text-sm">officialecell@jcer.in</p>
+                <a href="mailto:ecell.jcer@gmail.com" className="text-ecell-gray/70 text-sm hover:text-white transition-colors">ecell.jcer@gmail.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-ecell-glow mt-0.5 flex-shrink-0" />

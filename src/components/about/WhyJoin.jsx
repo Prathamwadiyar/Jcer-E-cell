@@ -15,7 +15,7 @@ const reasons = [
 
 const WhyJoin = () => {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-transparent relative overflow-hidden">
       <div className="orb orb-blue absolute bottom-0 right-0 w-80 h-80 opacity-20" />
       <div className="orb orb-cyan absolute top-0 left-0 w-60 h-60 opacity-15" />
 

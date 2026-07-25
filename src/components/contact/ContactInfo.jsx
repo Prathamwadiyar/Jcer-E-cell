@@ -7,9 +7,9 @@ const contactItems = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'ecell@college.edu.in',
+    value: 'ecell.jcer@gmail.com',
     sub: 'We reply within 24 hours',
-    href: 'mailto:ecell@college.edu.in',
+    href: 'mailto:ecell.jcer@gmail.com',
   },
   {
     icon: Phone,

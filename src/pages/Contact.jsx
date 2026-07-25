@@ -10,7 +10,7 @@ const Contact = () => {
       exit={{ opacity: 0 }}
     >
       {/* Hero */}
-      <section className="relative py-32 bg-black overflow-hidden">
+      <section className="relative py-32 bg-transparent overflow-hidden">
         <div className="orb orb-blue absolute top-0 left-1/4 w-96 h-72 opacity-22 pointer-events-none" />
         <div className="orb orb-cyan absolute bottom-0 right-1/3 w-80 h-64 opacity-15 pointer-events-none" />
 
@@ -36,7 +36,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-transparent">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <ContactInfo />

@@ -3,7 +3,7 @@ import SectionBadge from '../ui/SectionBadge';
 
 const AboutHero = () => {
   return (
-    <section className="relative min-h-[44vh] flex items-center justify-center overflow-hidden bg-black pt-20">
+    <section className="relative min-h-[44vh] flex items-center justify-center overflow-hidden bg-transparent pt-20">
       {/* Subtle atmospheric orbs only — no dots */}
       <div className="orb orb-blue absolute top-0 left-1/3 w-[500px] h-[400px] opacity-25 pointer-events-none" />
       <div className="orb orb-cyan absolute bottom-0 right-1/3 w-[400px] h-[300px] opacity-15 pointer-events-none" />

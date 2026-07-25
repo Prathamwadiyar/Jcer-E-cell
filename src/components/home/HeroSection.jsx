@@ -118,10 +118,38 @@ const HeroIllustration = () => (
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent">
       {/* Very subtle blue orb glow — not dots, just atmosphere */}
       <div className="orb orb-blue absolute -top-32 -left-32 w-[500px] h-[500px] opacity-50 pointer-events-none" />
       <div className="orb orb-cyan absolute top-1/2 right-0 w-[360px] h-[360px] opacity-30 pointer-events-none" />
+
+      {/* Left Dot Matrix Pattern */}
+      <motion.div
+        animate={{ opacity: [0.15, 0.35, 0.15] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute left-6 lg:left-14 top-1/2 -translate-y-1/2 hidden md:block pointer-events-none z-0"
+      >
+        <svg width="140" height="280" viewBox="0 0 140 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="dot-matrix-left" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="1.5" fill="#3B82F6" opacity="0.8" />
+          </pattern>
+          <rect width="140" height="280" fill="url(#dot-matrix-left)" />
+        </svg>
+      </motion.div>
+
+      {/* Right Dot Matrix Pattern */}
+      <motion.div
+        animate={{ opacity: [0.15, 0.35, 0.15] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 2.5 }}
+        className="absolute right-6 lg:right-14 top-1/2 -translate-y-1/2 hidden md:block pointer-events-none z-0"
+      >
+        <svg width="140" height="280" viewBox="0 0 140 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <pattern id="dot-matrix-right" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="1.5" fill="#60A5FA" opacity="0.8" />
+          </pattern>
+          <rect width="140" height="280" fill="url(#dot-matrix-right)" />
+        </svg>
+      </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-20 w-full flex items-center justify-center">
         <motion.div
@@ -171,23 +199,6 @@ const HeroSection = () => {
             </Link>
           </motion.div>
 
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-white/25 text-[10px] font-inter tracking-[0.2em] uppercase">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 7, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity }}
-            className="w-5 h-8 rounded-full border border-white/15 flex items-start justify-center p-1"
-          >
-            <div className="w-1 h-2 rounded-full bg-ecell-glow" />
-          </motion.div>
         </motion.div>
       </div>
     </section>
